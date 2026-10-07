@@ -581,6 +581,83 @@ body{
 @media(max-width:800px){.pw-terms-grid{grid-template-columns:minmax(0,1fr);max-width:500px;margin:0 auto}}
 </style>
 
+
+<style>
+/* How It Works — focused motion treatment */
+.process-section .section-heading{
+  animation: pwProcessHeading .8s cubic-bezier(.22,1,.36,1) both;
+}
+.process-section .process-track{
+  position:relative;
+}
+.process-section .process-track::before{
+  content:"";
+  position:absolute;
+  left:4%;
+  right:4%;
+  top:38px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,92,92,.28),transparent);
+  transform:scaleX(0);
+  transform-origin:center;
+  animation:pwProcessLine 1.2s .25s ease-out forwards;
+}
+.process-section .process-step{
+  position:relative;
+  opacity:0;
+  transform:translateY(28px);
+  animation:pwProcessStep .7s cubic-bezier(.22,1,.36,1) forwards;
+  transition:transform .28s ease,box-shadow .28s ease,background .28s ease;
+}
+.process-section .process-step:nth-child(1){animation-delay:.20s}
+.process-section .process-step:nth-child(2){animation-delay:.35s}
+.process-section .process-step:nth-child(3){animation-delay:.50s}
+.process-section .process-step:nth-child(4){animation-delay:.65s}
+.process-section .process-step:nth-child(5){animation-delay:.80s}
+.process-section .process-step:hover{
+  transform:translateY(-7px);
+}
+.process-section .process-step > span{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  animation:pwProcessPulse 2.8s 1.2s ease-in-out infinite;
+  transition:transform .28s ease;
+}
+.process-section .process-step:hover > span{
+  transform:scale(1.08);
+}
+@keyframes pwProcessHeading{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+@keyframes pwProcessLine{
+  from{transform:scaleX(0)}
+  to{transform:scaleX(1)}
+}
+@keyframes pwProcessStep{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes pwProcessPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(184,92,92,0)}
+  50%{box-shadow:0 0 0 7px rgba(184,92,92,.08)}
+}
+@media(max-width:800px){
+  .process-section .process-track::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .process-section .section-heading,
+  .process-section .process-step,
+  .process-section .process-track::before,
+  .process-section .process-step > span{
+    animation:none!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+}
+</style>
+
 </head>
 <body>
 </div>
@@ -596,7 +673,7 @@ body{
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#talent">Talent</a>
-        <a href="#process">How It Works</a><a href="#peoplewise-meaning">Our Approach</a>
+        <a href="#process">How It Works</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a class="nav-secondary" href="https://appointment.briskcloudware.com/book.html?r=wRS3GMm4" target="_blank" rel="noopener">Book a Call</a>
@@ -612,7 +689,7 @@ body{
       <div class="hero-orb orb-two"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> REMOTE TALENT SOURCING</div>
+          <div class="eyebrow"><span></span> WISE SOURCING</div>
           <h1>Find the right people <em>without the hiring headache.</em></h1>
           <p class="hero-text">
             Peoplewise Outsource helps growing businesses find, screen, and shortlist
@@ -869,36 +946,11 @@ body{
       </div>
     </section>
 
-    <!-- FAQ -->
-    
-<section class="pw-acronym-section" id="peoplewise-meaning">
-  <div class="pw-acronym-wrap">
-    <div class="eyebrow"><span></span> WHAT PEOPLEWISE STANDS FOR</div>
-    <div class="pw-acronym-heading">
-      <h2><em>Peoplewise</em> — more than a name.</h2>
-      <p>Our name reflects the way we approach remote hiring: with people, purpose, and smart decisions at the center.</p>
-    </div>
-    <div class="pw-acronym-list">
-      <div class="pw-acronym-row"><b>P</b><div><strong>People First</strong><span>We put the right people at the heart of every hiring decision.</span></div></div>
-      <div class="pw-acronym-row"><b>E</b><div><strong>Excellence</strong><span>We look for quality, capability, and professionalism.</span></div></div>
-      <div class="pw-acronym-row"><b>O</b><div><strong>Opportunity</strong><span>We connect businesses and professionals with meaningful opportunities.</span></div></div>
-      <div class="pw-acronym-row"><b>P</b><div><strong>Purpose</strong><span>We source with the role, business goals, and candidate fit in mind.</span></div></div>
-      <div class="pw-acronym-row"><b>L</b><div><strong>Long-Term Fit</strong><span>We focus on matches that can support sustainable working relationships.</span></div></div>
-      <div class="pw-acronym-row"><b>E</b><div><strong>Empowerment</strong><span>We help businesses hire with confidence and professionals find the right opportunities.</span></div></div>
-      <div class="pw-acronym-row"><b>W</b><div><strong>Work Ethic</strong><span>We value reliability, accountability, and a strong approach to work.</span></div></div>
-      <div class="pw-acronym-row"><b>I</b><div><strong>Integrity</strong><span>We believe in honest communication and transparent hiring.</span></div></div>
-      <div class="pw-acronym-row"><b>S</b><div><strong>Smart Sourcing</strong><span>We make the search more focused, practical, and efficient.</span></div></div>
-      <div class="pw-acronym-row"><b>E</b><div><strong>Every Connection Matters</strong><span>We treat every client and candidate interaction with care.</span></div></div>
-    </div>
-  </div>
-</section>
-
-
 <!-- Peoplewise Outsource — Client Terms & Replacement Policy -->
 <section class="pw-terms-section reveal" id="terms">
   <div class="pw-terms-wrap">
     <div class="pw-terms-intro">
-      <span class="eyebrow">Client Terms</span>
+      
       <h2>Clear terms. Better hiring.</h2>
       <p>We want the hiring process to feel straightforward, transparent, and low-risk for your business.</p>
     </div>
