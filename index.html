@@ -524,16 +524,16 @@ body{
 <style>
 /* Peoplewise floating help chatbot */
 .pw-chat-launcher{
-  position:fixed;right:22px;bottom:22px;z-index:9998;
+  position:fixed;right:22px;bottom:22px;z-index:2147483000;
   border:0;border-radius:999px;padding:14px 20px;
   background:#B85C5C;color:#fff;font:600 14px/1.1 Arial,sans-serif;
   box-shadow:0 12px 30px rgba(37,37,37,.20);cursor:pointer;
-  display:flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;
+  display:flex!important;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;
 }
 .pw-chat-launcher:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(37,37,37,.25)}
 .pw-chat-panel{
   position:fixed;right:22px;bottom:82px;width:min(360px,calc(100vw - 32px));
-  z-index:9999;background:#fff;border:1px solid rgba(184,92,92,.18);
+  z-index:2147483001;background:#fff;border:1px solid rgba(184,92,92,.18);
   border-radius:20px;box-shadow:0 20px 55px rgba(37,37,37,.22);
   overflow:hidden;display:none;font-family:Arial,sans-serif;
 }
